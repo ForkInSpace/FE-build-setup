@@ -1,18 +1,25 @@
 {
-  "name": "javascript-development-environment",
+  "name": "newsandthat",
   "version": "1.0.0",
-  "description": "JavaScript development environment setup for the n&t project",
+	"description": "setup for the newsAndthat project",
+	"main": "index.js",
   "scripts": {
 		"prestart": "babel-node buildScripts/startMessage.js",
-		"start": "npm-run-all --parallel security-check open:src lint:watch",
+		"start": "npm-run-all --parallel security-check open:src lint:watch test:watch",
 		"open:src": "babel-node buildScripts/srcServer.js",
 		"lint": "esw webpack.config.* src buildScripts --color",
 		"lint:watch": "npm run lint -- --watch",
 		"security-check": "nsp check",
 		"localtunnel": "lt --port 3001 --subdomain newsandthat",
-		"share": "npm-run-all --parallel open:src localtunnel"
+		"share": "npm-run-all --parallel open:src localtunnel",
+		"test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+		"test:watch": "npm run test -- --watch"
+	},
+	"repository": {
+    "type": "git",
+    "url": "git+https://github.com/ForkInSpace/nnthat.git"
   },
-  "author": "Zaza S.",
+  "author": "Zaza S. <ts.zaza@gmail.com>",
   "dependencies": {
     "whatwg-fetch": "1.0.0"
   },
@@ -49,6 +56,12 @@
     "webpack": "1.13.2",
     "webpack-dev-middleware": "1.8.4",
     "webpack-hot-middleware": "2.13.0",
-    "webpack-md5-hash": "0.0.5"
-  }
+		"webpack-md5-hash": "0.0.5",
+		"node-sass": "^4.5.3",
+    "pug": "^2.0.0-rc.4",
+    "pug-cli": "^1.0.0-alpha6"
+	},
+	"dependencies": {
+		"bootstrap": "^4.0.0-beta"
+	}
 }

@@ -1,7 +1,7 @@
 {
-  "name": "newsandthat",
+  "name": "FE-build-setup",
   "version": "1.0.0",
-	"description": "setup for the newsAndthat project",
+	"description": "setup for front-end",
 	"main": "index.js",
   "scripts": {
 		"prestart": "babel-node buildScripts/startMessage.js",
@@ -10,14 +10,14 @@
 		"lint": "esw webpack.config.* src buildScripts --color",
 		"lint:watch": "npm run lint -- --watch",
 		"security-check": "nsp check",
-		"localtunnel": "lt --port 3001 --subdomain newsandthat",
+		"localtunnel": "lt --port 3001 --subdomain fe-setup",
 		"share": "npm-run-all --parallel open:src localtunnel",
 		"test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
 		"test:watch": "npm run test -- --watch"
 	},
 	"repository": {
     "type": "git",
-    "url": "git+https://github.com/ForkInSpace/nnthat.git"
+    "url": "git+https://github.com/ForkInSpace/FE-build-setup.git"
   },
   "author": "Zaza S. <ts.zaza@gmail.com>",
   "dependencies": {

@@ -1,2 +1,3 @@
-# nnthat
-repo for the news app in JS
+# FE-build-setup
+
+Front-end build setup with bootstrap/pug/babel/express/webpack
